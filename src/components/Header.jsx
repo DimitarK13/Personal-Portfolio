@@ -1,5 +1,6 @@
-import iconMenu from '../assets/icons/icon-menu.svg';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import iconMenu from '../assets/icons/icon-menu.svg';
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -26,16 +27,16 @@ export default function Header() {
 
         <ul className='nav__list' id='primary-nav' aria-expanded={isNavOpen}>
           <li className='nav__list-item active'>
-            <a href='index.html'>01. Home</a>
+            <Link to={`/`}>01. Home</Link>
           </li>
           <li className='nav__list-item'>
-            <a href='about.html'>02. About</a>
+            <Link to={`about`}>02. About</Link>
           </li>
           <li className='nav__list-item'>
-            <a href='work.html'>03. Work</a>
+            <Link to={`work`}>03. Work</Link>
           </li>
           <li className='nav__list-item'>
-            <a href='contact.html'>04. Contact</a>
+            <Link to={`contact`}>04. Contact</Link>
           </li>
         </ul>
 

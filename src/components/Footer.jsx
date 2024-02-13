@@ -1,8 +1,9 @@
 import logoSpotify from '../assets/icons/logo-spotify.svg';
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 export default function Footer() {
-  const [title, setTitle] = useState('Be Free.');
+  const [title, setTitle] = useState('A m a r i');
   const [artist, setArtist] = useState('J. Cole');
   const [cover, setCover] = useState(
     'https://i.scdn.co/image/ab67616d00001e0210e6745bb2f179dd3616b85f'
@@ -85,9 +86,9 @@ export default function Footer() {
           />
         </div>
 
-        <a href='contact.html' className='btn btn--secondary'>
+        <Link to={`contact`} className='btn btn--secondary'>
           Get in Touch
-        </a>
+        </Link>
       </div>
     </footer>
   );
