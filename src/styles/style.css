@@ -32,12 +32,13 @@
   --border-radius-100: 8px;
 }
 
-@media (min-width: 772px) {
+@media (min-width: 768px) {
   :root {
     --fs-heading-100: 52px;
     --fs-heading-200: 48px;
     --fs-heading-300: 32px;
     --fs-heading-400: 24px;
+    --fs-body-l: 42px;
   }
 }
 
@@ -120,6 +121,16 @@ button {
   margin-inline: auto;
 }
 
+main {
+  padding-top: 120px;
+}
+
+@media (min-width: 920px) {
+  main {
+    padding-top: 180px;
+  }
+}
+
 /* Typography */
 
 .h1,
@@ -152,6 +163,7 @@ h4 {
 
 .body-l {
   font-size: var(--fs-body-l);
+  font-weight: var(--fw-regular);
   line-height: 1.1;
 }
 
@@ -225,6 +237,8 @@ h4 {
 /* Navigation */
 
 .nav {
+  position: fixed;
+  width: 100%;
   padding-block: 1.5rem;
   background-color: var(--clr-neutral-900-40);
   backdrop-filter: blur(32px);
@@ -320,7 +334,7 @@ h4 {
   }
 }
 
-@media (min-width: 772px) {
+@media (min-width: 768px) {
   .nav__availability-status--toggle {
     padding: 8px 32px;
     gap: 12px;
@@ -377,4 +391,34 @@ h4 {
 
 .footer__spotify-logo {
   margin-left: auto;
+}
+
+/* Error 404 */
+.err__container {
+  display: grid;
+}
+
+.err__btn-wrapper {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.err__btn-wrapper > * {
+  width: max-content;
+}
+
+@media (min-width: 768px) {
+  .err__container {
+    place-items: center;
+  }
+
+  .err__heading {
+    text-align: center;
+  }
+
+  .err__btn-wrapper {
+    flex-direction: row;
+  }
 }
