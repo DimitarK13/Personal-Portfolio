@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import iconMenu from '../assets/icons/icon-menu.svg';
+import iconClose from '../assets/icons/icon-close.svg';
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [navIcon, setNavIcon] = useState(iconMenu);
   const [isStatusOpen, setIsStatusOpen] = useState(false);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
+
+    isNavOpen ? setNavIcon(iconMenu) : setNavIcon(iconClose);
   };
 
   const toggleStatus = () => {
@@ -22,21 +26,29 @@ export default function Header() {
           aria-controls='primary-nav'
           aria-expanded={isNavOpen}
           onClick={toggleNav}>
-          <img src={iconMenu} alt='Menu toggle open' />
+          <img src={navIcon} alt='Menu toggle open' />
         </button>
 
         <ul className='nav__list' id='primary-nav' aria-expanded={isNavOpen}>
           <li className='nav__list-item active'>
-            <Link to={`/`}>01. Home</Link>
+            <Link to={`/`} onClick={toggleNav}>
+              01. Home
+            </Link>
           </li>
           <li className='nav__list-item'>
-            <Link to={`about`}>02. About</Link>
+            <Link to={`about`} onClick={toggleNav}>
+              02. About
+            </Link>
           </li>
           <li className='nav__list-item'>
-            <Link to={`work`}>03. Work</Link>
+            <Link to={`work`} onClick={toggleNav}>
+              03. Work
+            </Link>
           </li>
           <li className='nav__list-item'>
-            <Link to={`contact`}>04. Contact</Link>
+            <Link to={`contact`} onClick={toggleNav}>
+              04. Contact
+            </Link>
           </li>
         </ul>
 
