@@ -204,7 +204,7 @@ h4 {
 }
 
 .btn--primary:hover,
-.btn--primary:focus {
+.btn--primary:focus-visible {
   transform: translateY(-5px);
 }
 
@@ -217,7 +217,7 @@ h4 {
 }
 
 .btn--secondary:hover,
-.btn--secondary:focus {
+.btn--secondary:focus-visible {
   background-color: var(--clr-neutral-100);
   color: var(--clr-neutral-900);
 }
@@ -256,7 +256,7 @@ h4 {
 }
 
 .nav__list-item a:hover,
-.nav__list-item a:focus {
+.nav__list-item a:focus-visible {
   transform: translateY(-5px);
 }
 
@@ -276,8 +276,7 @@ h4 {
   top: calc(100% + 24px);
   right: 0;
   width: 100%;
-  background-color: var(--clr-neutral-900-40);
-  backdrop-filter: blur(32px);
+  background-color: var(--clr-neutral-900);
   padding: 1.5rem;
 
   max-width: 500px;
