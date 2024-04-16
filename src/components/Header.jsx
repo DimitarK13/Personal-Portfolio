@@ -30,7 +30,7 @@ export default function Header() {
         </button>
 
         <ul className='nav__list' id='primary-nav' aria-expanded={isNavOpen}>
-          <li className='nav__list-item active'>
+          <li className='nav__list-item'>
             <Link to={`/`} onClick={toggleNav}>
               01. Home
             </Link>
