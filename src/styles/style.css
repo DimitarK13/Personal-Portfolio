@@ -122,6 +122,12 @@ button {
   margin-inline: auto;
 }
 
+@media (min-width: 993px) {
+  .container__padding-top {
+    padding-top: 140px;
+  }
+}
+
 /* Typography */
 
 .h1,
@@ -129,6 +135,7 @@ h1 {
   font-size: var(--fs-heading-100);
   font-weight: var(--fw-semi-bold);
   line-height: 1.1;
+  text-transform: uppercase;
 }
 
 .h2,
@@ -473,5 +480,47 @@ h4 {
   .hero__line {
     width: 1px;
     height: 100px;
+  }
+}
+
+.about__heading {
+  margin-bottom: 40px;
+}
+
+.side-by-side {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  margin-bottom: 120px;
+}
+
+.side-bys-side__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 625px;
+}
+
+.side-by-side__img {
+  max-width: 350px;
+  height: 450px;
+  border-radius: 100vw;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .about__heading {
+    margin-bottom: 80px;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .side-by-side {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 160px;
   }
 }

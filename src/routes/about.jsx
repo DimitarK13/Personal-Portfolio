@@ -5,8 +5,10 @@ import OtherProject from '../components/OtherProject';
 export default function About() {
   return (
     <>
-      <div className='container'>
-        <h1>Creative Problem Solver Embracing Innovation</h1>
+      <div className='container container__padding-top'>
+        <h1 className='about__heading'>
+          Creative Problem Solver Embracing Innovation
+        </h1>
 
         <section className='side-by-side'>
           <div className='side-bys-side__content'>
