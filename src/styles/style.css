@@ -412,9 +412,11 @@ h4 {
   width: max-content;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .err__container {
     place-items: center;
+    place-content: center;
+    height: 100vh;
   }
 
   .err__heading {
