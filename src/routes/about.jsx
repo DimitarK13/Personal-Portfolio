@@ -5,7 +5,7 @@ import OtherProject from '../components/OtherProject';
 export default function About() {
   return (
     <>
-      <div className='container container__padding-top'>
+      <div className='container container__padding-block'>
         <h1 className='about__heading'>
           Creative Problem Solver Embracing Innovation
         </h1>
@@ -53,32 +53,28 @@ export default function About() {
         </section>
 
         <section className='more-projects'>
-          <div className='more-projects__container'>
-            <div className='more-projects__header'>
-              <h2 className='more-projects__header-heading'>
-                Besides my career
-              </h2>
-              <p className='more-projects__header-text'>
-                Engaging in a spectrum of activities and projects has been
-                instrumental in my growth, nurturing both my development skills
-                and personal journey.
-              </p>
-            </div>
+          <div className='more-projects__header'>
+            <h2 className='more-projects__header-heading'>Besides my career</h2>
+            <p className='more-projects__header-text'>
+              Engaging in a spectrum of activities and projects has been
+              instrumental in my growth, nurturing both my development skills
+              and personal journey.
+            </p>
+          </div>
 
-            <div className='more-projects__projects'>
-              <h3 className='more-projects__projects-heading'>
-                Erasmus+ Projects:
-              </h3>
+          <div className='more-projects__projects'>
+            <h3 className='more-projects__projects-heading'>
+              Erasmus+ Projects:
+            </h3>
 
-              <OtherProject
-                heading='Walking towards 2030 - Malaga, Spain'
-                text="Through diverse activities and discussions, we delved into a wealth of knowledge about our planet's pressing challenges. Exploring the intricacies of the 17 Sustainable Development Goals, we realized the urgency for collective action to achieve them by 2030. Where I also met my gorgeous girlfriend."
-              />
-              <OtherProject
-                heading="Inclusion Methods for Daily Youth Worker's Job - Craiova, Romania"
-                text='During this training course, our primary focus was on promoting inclusion in daily life. We explored new methods and practical exercises geared toward improving everyday communication and inclusion.'
-              />
-            </div>
+            <OtherProject
+              heading='Walking towards 2030 - Malaga, Spain'
+              text="Through diverse activities and discussions, we delved into a wealth of knowledge about our planet's pressing challenges. Exploring the intricacies of the 17 Sustainable Development Goals, we realized the urgency for collective action to achieve them by 2030. Where I also met my gorgeous girlfriend."
+            />
+            <OtherProject
+              heading="Inclusion Methods for Daily Youth Worker's Job - Craiova, Romania"
+              text='During this training course, our primary focus was on promoting inclusion in daily life. We explored new methods and practical exercises geared toward improving everyday communication and inclusion.'
+            />
           </div>
         </section>
       </div>

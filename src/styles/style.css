@@ -395,7 +395,7 @@ h4 {
   margin-left: auto;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 993px) {
   .footer {
     position: absolute;
     bottom: 0;
@@ -608,5 +608,76 @@ h4 {
   .card:nth-of-type(even)::before {
     left: auto;
     right: -56px;
+  }
+}
+
+.more-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.more-projects__header {
+  max-width: 454px;
+}
+
+.more-projects__header-heading {
+  margin-bottom: 16px;
+}
+
+.more-projects__projects {
+  flex: 1;
+}
+
+.more-projects__projects-heading {
+  margin-bottom: 24px;
+}
+
+.project-s {
+  padding-block: 32px;
+
+  position: relative;
+}
+
+.project-s::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 1px;
+  background-color: var(--clr-neutral-100);
+}
+
+.project-s:last-of-type {
+  padding-bottom: 0;
+}
+
+.project-s:last-of-type::after {
+  display: none;
+}
+
+.project-s:first-of-type {
+  padding-top: 0;
+}
+
+.project-s__heading {
+  margin-bottom: 12px;
+}
+
+@media (min-width: 993px) {
+  .more-projects {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .more-projects__header-heading {
+    margin-bottom: 24px;
+  }
+
+  .project-s {
+    padding-block: 40px;
   }
 }
