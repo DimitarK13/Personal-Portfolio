@@ -123,8 +123,8 @@ button {
 }
 
 @media (min-width: 993px) {
-  .container__padding-top {
-    padding-top: 140px;
+  .container__padding-block {
+    padding-block: 140px 180px;
   }
 }
 
@@ -520,7 +520,93 @@ h4 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+}
 
-    margin-bottom: 160px;
+.career-path {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  position: relative;
+  margin-bottom: 120px;
+}
+
+.career-path::before {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: calc(100% - 25px);
+  background-color: var(--clr-neutral-800);
+
+  position: absolute;
+  top: 25px;
+  left: 7px;
+}
+
+.card {
+  position: relative;
+  margin-left: 32px;
+  max-width: 568px;
+}
+
+.card::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--border-radius-900);
+  background-color: var(--clr-neutral-100);
+
+  position: absolute;
+  left: -32px;
+  top: 25px;
+}
+
+.card__year {
+  color: var(--clr-neutral-700);
+}
+
+.card__content {
+  padding: 8px 16px;
+  border: 1px solid var(--clr-neutral-100);
+  border-radius: var(--border-radius-400);
+}
+
+@media (min-width: 768px) {
+  .card__content {
+    padding: 16px 24px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .career-path {
+    gap: 90px;
+  }
+
+  .career-path::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .card {
+    margin-left: 0;
+  }
+
+  .card:nth-of-type(odd) {
+    margin-left: auto;
+  }
+
+  .card:nth-of-type(odd) .card__year {
+    text-align: right;
+  }
+
+  .card:nth-of-type(odd)::before {
+    left: -56px;
+  }
+
+  .card:nth-of-type(even)::before {
+    left: auto;
+    right: -56px;
   }
 }
