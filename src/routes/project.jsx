@@ -18,7 +18,8 @@ export default function Project() {
               <a
                 href={projectData.link}
                 target='_blank'
-                rel='noopener noreferrer'>
+                rel='noopener noreferrer'
+                className='p__header-title-link'>
                 {projectData.heading}
               </a>
             ) : (

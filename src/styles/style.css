@@ -791,6 +791,17 @@ h4 {
   gap: 32px;
 }
 
+.p__header-title-link::after {
+  content: '';
+  display: inline-block;
+  background-image: url('/src/assets/icons/icon-link.svg');
+  width: 28px;
+  aspect-ratio: 1;
+  vertical-align: super;
+  margin-left: 4px;
+  background-size: cover;
+}
+
 .p-content__description {
   max-width: 736px;
 }

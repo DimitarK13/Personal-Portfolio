@@ -38,7 +38,6 @@ export default function Work() {
     {
       id: 'personal-portfolio',
       heading: 'Personal Portfolio',
-      link: 'https://dimitark.com',
       description: `Personal portfolio for Dimitar Kalapocev (me) developed to showcase my skills in design & development. On this portfolio you can find information about me, my projects, my location (and some info about the location) and availability status. While this portfolio is still a work in progress, feel free to interrupt me for your project!`,
       year: '2024',
       language: 'English',
