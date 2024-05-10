@@ -19,10 +19,10 @@ export default function About() {
               comfort zone is something I do often to improve myself.
             </p>
             <p className='side-by-side__paragraph'>
-              Apart from coding, I find joy in delving into psychology books,
-              strategizing in chess, and cheering for Barcelona football club. I
-              also cherish participating in Erasmus+ projects, fostering
-              collaboration and cultural exchange.
+              Apart from coding, I find joy in psychology books, chess, and
+              cheering for Barcelona football club. I also cherish participating
+              in Erasmus+ projects, fostering collaboration and cultural
+              exchange.
             </p>
           </div>
 
