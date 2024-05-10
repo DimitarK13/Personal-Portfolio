@@ -11,7 +11,7 @@ export default function About() {
         </h1>
 
         <section className='side-by-side'>
-          <div className='side-bys-side__content'>
+          <div className='side-by-side__content'>
             <p className='side-by-side__paragraph'>
               Coming from Strumica in North Macedonia, my journey is all about
               learning and discovering new things. I love solving problems and

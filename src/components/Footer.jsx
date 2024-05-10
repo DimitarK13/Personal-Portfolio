@@ -10,63 +10,63 @@ export default function Footer() {
   );
   const [titleAttr, setTitleAttr] = useState(`${title} by ${artist}`);
 
-  useEffect(() => {
-    const fetchToken = async () => {
-      try {
-        const response = await fetch('http://localhost/');
-        const { token } = await response.json();
-        return token;
-      } catch (error) {
-        console.error(error);
-        throw error;
-      }
-    };
+  // useEffect(() => {
+  //   const fetchToken = async () => {
+  //     try {
+  //       const response = await fetch('http://localhost/');
+  //       const { token } = await response.json();
+  //       return token;
+  //     } catch (error) {
+  //       console.error(error);
+  //       throw error;
+  //     }
+  //   };
 
-    const fetchPlaylist = async (accessToken) => {
-      try {
-        const data = await fetch(
-          'https://api.spotify.com/v1/playlists/7mZMTUVKNl6hyWInTJqq1d?fields=tracks.items',
-          {
-            method: 'GET',
-            headers: {
-              Authorization: 'Bearer ' + accessToken,
-            },
-          }
-        );
+  //   const fetchPlaylist = async (accessToken) => {
+  //     try {
+  //       const data = await fetch(
+  //         'https://api.spotify.com/v1/playlists/7mZMTUVKNl6hyWInTJqq1d?fields=tracks.items',
+  //         {
+  //           method: 'GET',
+  //           headers: {
+  //             Authorization: 'Bearer ' + accessToken,
+  //           },
+  //         }
+  //       );
 
-        const playlist = await data.json();
-        const playlistLength = playlist?.tracks?.items.length - 1;
-        const randomTrack = Math.ceil(Math.random() * playlistLength);
+  //       const playlist = await data.json();
+  //       const playlistLength = playlist?.tracks?.items.length - 1;
+  //       const randomTrack = Math.ceil(Math.random() * playlistLength);
 
-        const getTrack = (n) => {
-          const track = playlist.tracks.items[n].track;
-          const { name: trackName, artists, album } = track;
-          const trackArtist = artists[0]?.name || 'Unknown Artist';
-          const albumCover = album.images[1]?.url || '';
+  //       const getTrack = (n) => {
+  //         const track = playlist.tracks.items[n].track;
+  //         const { name: trackName, artists, album } = track;
+  //         const trackArtist = artists[0]?.name || 'Unknown Artist';
+  //         const albumCover = album.images[1]?.url || '';
 
-          setTitle(trackName);
-          setArtist(trackArtist);
-          setCover(albumCover);
-          setTitleAttr(`${trackName} by ${trackArtist}`);
-        };
+  //         setTitle(trackName);
+  //         setArtist(trackArtist);
+  //         setCover(albumCover);
+  //         setTitleAttr(`${trackName} by ${trackArtist}`);
+  //       };
 
-        getTrack(randomTrack);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  //       getTrack(randomTrack);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
 
-    const fetchData = async () => {
-      try {
-        const accessToken = await fetchToken();
-        await fetchPlaylist(accessToken);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  //   const fetchData = async () => {
+  //     try {
+  //       const accessToken = await fetchToken();
+  //       await fetchPlaylist(accessToken);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
 
-    fetchData();
-  }, [setTitle, setArtist, setCover, setTitleAttr]);
+  //   fetchData();
+  // }, [setTitle, setArtist, setCover, setTitleAttr]);
 
   return (
     <footer className='footer'>
