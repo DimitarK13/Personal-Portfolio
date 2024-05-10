@@ -1,4 +1,4 @@
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams, Navigate } from 'react-router-dom';
 
 export default function Project() {
   const { projectId } = useParams();
@@ -6,7 +6,7 @@ export default function Project() {
   const { projectData } = location.state || {};
 
   if (!projectData || projectData.id !== projectId) {
-    return <div>Project data not found</div>;
+    return <Navigate to='/work' />;
   }
 
   return (
