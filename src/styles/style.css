@@ -732,3 +732,32 @@ h4 {
     margin-top: 40px;
   }
 }
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  margin-top: 40px;
+}
+
+.projects-heading {
+  max-width: 800px;
+}
+
+.projects__heading a {
+  color: var(--clr-neutral-700);
+  transition: color 175ms ease-in-out;
+}
+
+.projects__heading a:hover,
+.projects__heading a:focus {
+  color: var(--clr-neutral-100);
+}
+
+@media (min-width: 768px) {
+  .projects {
+    margin-top: 80px;
+    gap: 60px;
+  }
+}
