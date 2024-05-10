@@ -7,6 +7,7 @@ import Home from './routes/home';
 import About from './routes/about';
 import Work from './routes/work';
 import Contact from './routes/contact';
+import Project from './routes/project';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: 'work/',
         element: <Work />,
+      },
+      {
+        path: 'work/:projectId',
+        element: <Project />,
       },
       {
         path: 'contact/',
