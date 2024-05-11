@@ -8,7 +8,7 @@ export default function Header() {
   const [navIcon, setNavIcon] = useState(iconMenu);
   const [isStatusOpen, setIsStatusOpen] = useState(false);
 
-  const message = 'vacation';
+  const message = 'available';
   const availabilityStatuses = {
     available: {
       status: 'Available',
