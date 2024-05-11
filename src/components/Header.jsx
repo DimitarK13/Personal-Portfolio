@@ -8,6 +8,23 @@ export default function Header() {
   const [navIcon, setNavIcon] = useState(iconMenu);
   const [isStatusOpen, setIsStatusOpen] = useState(false);
 
+  const message = 'vacation';
+  const availabilityStatuses = {
+    available: {
+      status: 'Available',
+      message: 'Ready to begin immediately. Contact me now to get started!',
+    },
+    busy: {
+      status: 'Busy',
+      message:
+        'Currently on a project, available after completion. Contact me to discuss starting afterward.',
+    },
+    vacation: {
+      status: 'Vacation',
+      message: `Will start upon return from vacation. Reach out, and we'll plan once I'm back!`,
+    },
+  };
+
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
 
@@ -59,8 +76,13 @@ export default function Header() {
             aria-expanded={isStatusOpen}
             onClick={toggleStatus}>
             <p className='body-s'>Current Status:</p>
-            <p className='body-m color--available font-weight--medium'>
-              Available
+            <p
+              className={
+                'body-m color--' +
+                availabilityStatuses[message].status.toLowerCase() +
+                ' font-weight--medium'
+              }>
+              {availabilityStatuses[message].status}
             </p>
           </div>
 
@@ -72,8 +94,12 @@ export default function Header() {
               Project Availability Status
             </p>
 
-            <p className='body-s color--available'>
-              Ready to begin immediately. Contact me now to get started!
+            <p
+              className={
+                'body-s color--' +
+                availabilityStatuses[message].status.toLowerCase()
+              }>
+              {availabilityStatuses[message].message}
             </p>
           </div>
         </div>

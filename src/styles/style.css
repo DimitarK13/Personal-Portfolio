@@ -8,7 +8,7 @@
 
   --clr-accent-400: #12dd00;
   --clr-accent-500: #dd9200;
-  --clr-accent-600: #004ddd;
+  --clr-accent-600: #00b3ff;
 
   --fs-heading-100: 40px;
   --fs-heading-200: 32px;
@@ -307,9 +307,9 @@ h4 {
 .nav__availability-status--message {
   pointer-events: none;
   position: absolute;
+  width: 280px;
   top: calc(100% + 24px);
   right: 0;
-  width: 280px;
   background-color: var(--clr-neutral-900);
   padding: 1.5rem;
 
@@ -327,6 +327,13 @@ h4 {
 .nav__availability-status__title {
   margin-bottom: 16px;
   color: var(--clr-neutral-600);
+}
+
+@media (min-width: 768px) {
+  .nav__availability-status--message {
+    width: auto;
+    white-space: nowrap;
+  }
 }
 
 @media (max-width: 992px) {
