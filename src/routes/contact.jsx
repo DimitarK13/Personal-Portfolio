@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
-import iconGithub from '../assets/icons/icon-github.svg';
-import iconInstagram from '../assets/icons/icon-instagram.svg';
-import iconLinkedin from '../assets/icons/icon-linkedin.svg';
-import iconMail from '../assets/icons/icon-mail.svg';
+
+import ContactForm from '../components/ContactForm';
 
 export default function Contact() {
   const [city, setCity] = useState('');
@@ -83,44 +81,29 @@ export default function Contact() {
               ideas, projects, design, chess, science, football...
             </p>
 
-            <div className='contact__content-icons'>
-              <a href='mailto:dimikalapocev@gmail.com' target='_blank'>
-                <img src={iconMail} alt='Mail icon' />
-              </a>
-              <a
-                href='https://www.linkedin.com/in/dimitar-kalapocev/'
-                target='_blank'>
-                <img src={iconLinkedin} alt='LinkedIn icon' />
-              </a>
-              <a
-                href='https://www.instagram.com/dimitar_kalapocev/'
-                target='_blank'>
-                <img src={iconInstagram} alt='Instagram icon' />
-              </a>
-              <a href='https://github.com/DimitarK13' target='_blank'>
-                <img src={iconGithub} alt='GitHub icon' />
-              </a>
+            <div className='contact__location'>
+              <p>
+                <span className='font-weight--semi-bold'>Location:</span>{' '}
+                <span>{city}</span>, <span>{country}</span>
+              </p>
+              <p>
+                <span className='font-weight--semi-bold'>Local Time:</span>{' '}
+                <span>{formattedDateTime}</span>
+              </p>
+              <p>
+                <span className='font-weight--semi-bold'>
+                  Local Temperature:
+                </span>{' '}
+                <span>{temp}°C</span>
+              </p>
+              <p>
+                <span className='font-weight--semi-bold'>Local Weather:</span>{' '}
+                <span>{capitalizeWords(weather)}</span>
+              </p>
             </div>
           </div>
 
-          <div className='contact__location'>
-            <p>
-              <span className='font-weight--semi-bold'>Location:</span>{' '}
-              <span>{city}</span>, <span>{country}</span>
-            </p>
-            <p>
-              <span className='font-weight--semi-bold'>Local Time:</span>{' '}
-              <span>{formattedDateTime}</span>
-            </p>
-            <p>
-              <span className='font-weight--semi-bold'>Local Temperature:</span>{' '}
-              <span>{temp}°C</span>
-            </p>
-            <p>
-              <span className='font-weight--semi-bold'>Local Weather:</span>{' '}
-              <span>{capitalizeWords(weather)}</span>
-            </p>
-          </div>
+          <ContactForm />
         </div>
       </div>
     </>
