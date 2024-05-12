@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Work() {
+  const [image, setImage] = useState('/assets/projects/project-neotek-1.png');
+
   const projects = [
     {
       id: 'neotek-systems',
@@ -109,15 +112,22 @@ export default function Work() {
           Explore the fine selection of projects
         </h1>
 
-        <ul className='projects'>
-          {projects.map((project) => (
-            <li key={project.id} className='h2 projects__heading'>
-              <Link to={`/work/${project.id}`} state={{ projectData: project }}>
-                {project.heading}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className='project-container'>
+          <ul className='projects'>
+            {projects.map((project) => (
+              <li key={project.id} className='h2 projects__heading'>
+                <Link
+                  to={`/work/${project.id}`}
+                  state={{ projectData: project }}
+                  onMouseOver={() => setImage(project.images[0])}>
+                  {project.heading}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <img className='projects__image-showcase' src={image} />
+        </div>
       </div>
     </>
   );

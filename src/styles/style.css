@@ -923,3 +923,23 @@ h4 {
     width: 400px;
   }
 }
+
+.project-container {
+  position: relative;
+}
+
+.projects__image-showcase {
+  position: absolute;
+  top: 15%;
+  right: 0;
+  width: 480px;
+  height: 270px;
+
+  border-radius: var(--border-radius-100);
+}
+
+@media (max-width: 1080px) {
+  .projects__image-showcase {
+    display: none;
+  }
+}
