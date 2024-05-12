@@ -5,7 +5,7 @@ import iconMail from '../assets/icons/icon-mail.svg';
 
 export default function ContactForm() {
   return (
-    <form className='form' netlify name='contact' method='POST'>
+    <form className='form' data-netlify='true' name='contact' method='POST'>
       <label className='input-label'>
         Name
         <input
@@ -63,6 +63,8 @@ export default function ContactForm() {
           </a>
         </div>
       </div>
+
+      <input type='hidden' name='contact' value='contact' />
     </form>
   );
 }
