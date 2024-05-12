@@ -5,7 +5,7 @@ import iconMail from '../assets/icons/icon-mail.svg';
 
 export default function ContactForm() {
   return (
-    <form className='form' name='contact' method='POST' action='/'>
+    <form className='form' name='contact' method='POST'>
       <input type='hidden' name='form-name' value='contact' />
       <label className='input-label'>
         Name
