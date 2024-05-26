@@ -4,7 +4,7 @@ import OtherProject from '../components/OtherProject';
 
 export default function About() {
   return (
-    <>
+    <div data-scroll-section>
       <div className='container container__padding-block'>
         <h1 className='about__heading'>
           Creative Problem Solver Embracing Innovation
@@ -78,6 +78,6 @@ export default function About() {
           </div>
         </section>
       </div>
-    </>
+    </div>
   );
 }

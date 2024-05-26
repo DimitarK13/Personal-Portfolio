@@ -121,7 +121,7 @@ export default function Work() {
   ];
 
   return (
-    <>
+    <div data-scroll-section>
       <div className='container container__padding-block'>
         <h1 className='projects-heading'>
           Explore the fine selection of projects
@@ -144,6 +144,6 @@ export default function Work() {
           <img className='projects__image-showcase' src={image} />
         </div>
       </div>
-    </>
+    </div>
   );
 }

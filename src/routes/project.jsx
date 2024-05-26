@@ -10,7 +10,7 @@ export default function Project() {
   }
 
   return (
-    <>
+    <div data-scroll-section>
       <div className='container container__padding-block'>
         <header className='p__header'>
           <h1 className='p__header-title'>
@@ -69,6 +69,6 @@ export default function Project() {
             ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
