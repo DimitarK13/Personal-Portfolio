@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export default function Work() {
   const [image, setImage] = useState('/assets/projects/project-neotek-1.png');
@@ -120,28 +121,66 @@ export default function Work() {
     },
   ];
 
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.1,
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
     <div data-scroll-section>
       <div className='container container__padding-block'>
-        <h1 className='projects-heading'>
+        <motion.h1
+          className='projects-heading'
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 1,
+            ease: 'anticipate',
+          }}>
           Explore the fine selection of projects
-        </h1>
+        </motion.h1>
 
         <div className='project-container'>
-          <ul className='projects'>
+          <motion.ul
+            className='projects'
+            variants={container}
+            initial='hidden'
+            animate='visible'>
             {projects.map((project) => (
-              <li key={project.id} className='h2 projects__heading'>
+              <motion.li
+                key={project.id}
+                variants={item}
+                className='h2 projects__heading'>
                 <Link
                   to={`/work/${project.id}`}
                   state={{ projectData: project }}
                   onMouseOver={() => setImage(project.images[0])}>
                   {project.heading}
                 </Link>
-              </li>
+              </motion.li>
             ))}
-          </ul>
 
-          <img className='projects__image-showcase' src={image} />
+            <motion.img
+              className='projects__image-showcase'
+              variants={item}
+              src={image}
+            />
+          </motion.ul>
         </div>
       </div>
     </div>

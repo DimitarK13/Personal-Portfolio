@@ -2,12 +2,39 @@ import iconGithub from '../assets/icons/icon-github.svg';
 import iconInstagram from '../assets/icons/icon-instagram.svg';
 import iconLinkedin from '../assets/icons/icon-linkedin.svg';
 import iconMail from '../assets/icons/icon-mail.svg';
+import { motion } from 'framer-motion';
 
 export default function ContactForm() {
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.1,
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
-    <form className='form' name='contact' method='POST'>
+    <motion.form
+      className='form'
+      name='contact'
+      method='POST'
+      variants={container}
+      initial='hidden'
+      animate='visible'>
       <input type='hidden' name='form-name' value='contact' />
-      <label className='input-label'>
+      <motion.label className='input-label' variants={item}>
         Name
         <input
           type='text'
@@ -16,9 +43,9 @@ export default function ContactForm() {
           placeholder='John Doe'
           required
         />
-      </label>
+      </motion.label>
 
-      <label className='input-label'>
+      <motion.label className='input-label' variants={item}>
         Email
         <input
           type='email'
@@ -27,18 +54,18 @@ export default function ContactForm() {
           placeholder='johndoe@example.com'
           required
         />
-      </label>
+      </motion.label>
 
-      <label className='input-label'>
+      <motion.label className='input-label' variants={item}>
         Message
         <textarea
           name='message'
           placeholder='I have a project in mind....'
           className='input-element input-textarea'
           required></textarea>
-      </label>
+      </motion.label>
 
-      <div className='form__footer'>
+      <motion.div className='form__footer' variants={item}>
         <input
           type='submit'
           className='btn btn--primary form__btn'
@@ -63,7 +90,7 @@ export default function ContactForm() {
             <img src={iconGithub} alt='GitHub icon' />
           </a>
         </div>
-      </div>
-    </form>
+      </motion.div>
+    </motion.form>
   );
 }

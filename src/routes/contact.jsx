@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-
+import { motion } from 'framer-motion';
 import ContactForm from '../components/ContactForm';
 
 export default function Contact() {
@@ -75,7 +75,14 @@ export default function Contact() {
     <>
       <div className='container container__padding-block'>
         <div className='contact'>
-          <div className='contact__content'>
+          <motion.div
+            className='contact__content'
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 1,
+              ease: 'anticipate',
+            }}>
             <h1 className='contact__content-heading'>Let’s discuss</h1>
             <p className='contact__content-text'>
               ideas, projects, design, chess, science, football...
@@ -101,7 +108,7 @@ export default function Contact() {
                 <span>{capitalizeWords(weather)}</span>
               </p>
             </div>
-          </div>
+          </motion.div>
 
           <ContactForm />
         </div>
