@@ -72,47 +72,65 @@ export default function Contact() {
   }, []);
 
   return (
-    <>
+    <div data-scroll-section>
       <div className='container container__padding-block'>
         <div className='contact'>
-          <motion.div
-            className='contact__content'
+          <motion.header
+            className='contact__header'
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 1,
               ease: 'anticipate',
             }}>
-            <h1 className='contact__content-heading'>Let’s discuss</h1>
-            <p className='contact__content-text'>
-              ideas, projects, design, chess, science, football...
+            <h1 className='contact__header-heading'>Let’s Build</h1>
+            <p className='contact__header-text'>
+              your website, webapp, portfolio, blogsite....
             </p>
+          </motion.header>
 
-            <div className='contact__location'>
-              <p>
-                <span className='font-weight--semi-bold'>Location:</span>{' '}
-                <span>{city}</span>, <span>{country}</span>
-              </p>
-              <p>
-                <span className='font-weight--semi-bold'>Local Time:</span>{' '}
-                <span>{formattedDateTime}</span>
-              </p>
-              <p>
-                <span className='font-weight--semi-bold'>
-                  Local Temperature:
-                </span>{' '}
-                <span>{temp}°C</span>
-              </p>
-              <p>
-                <span className='font-weight--semi-bold'>Local Weather:</span>{' '}
-                <span>{capitalizeWords(weather)}</span>
-              </p>
-            </div>
-          </motion.div>
+          <div className='contact__content'>
+            <ContactForm />
 
-          <ContactForm />
+            <motion.div
+              className='contact__content-info'
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 1,
+                ease: 'anticipate',
+              }}>
+              <div className='contact__content-info__data'>
+                <h3 className='body-s'>Location</h3>
+
+                <div>
+                  <p>
+                    {city}, {country}
+                  </p>
+                  <p>{formattedDateTime}</p>
+                  <p>
+                    {temp}°C - {capitalizeWords(weather)}
+                  </p>
+                </div>
+              </div>
+
+              <div className='contact__content-info__data'>
+                <h3 className='body-s'>Get in Touch</h3>
+
+                <div>
+                  <a href='https://www.linkedin.com/in/dimitar-kalapocev/'>
+                    LinkedIn
+                  </a>
+                  <a href='https://www.instagram.com/dimitar_kalapocev/'>
+                    Instagram
+                  </a>
+                  <a href='https://github.com/DimitarK13'>GitHub</a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -1,7 +1,3 @@
-import iconGithub from '../assets/icons/icon-github.svg';
-import iconInstagram from '../assets/icons/icon-instagram.svg';
-import iconLinkedin from '../assets/icons/icon-linkedin.svg';
-import iconMail from '../assets/icons/icon-mail.svg';
 import { motion } from 'framer-motion';
 
 export default function ContactForm() {
@@ -34,6 +30,7 @@ export default function ContactForm() {
       initial='hidden'
       animate='visible'>
       <input type='hidden' name='form-name' value='contact' />
+
       <motion.label className='input-label' variants={item}>
         Name
         <input
@@ -57,40 +54,32 @@ export default function ContactForm() {
       </motion.label>
 
       <motion.label className='input-label' variants={item}>
-        Message
-        <textarea
-          name='message'
-          placeholder='I have a project in mind....'
-          className='input-element input-textarea'
-          required></textarea>
+        Type
+        <input
+          type='text'
+          name='type'
+          className='input-element'
+          placeholder='Development, Design or Mentor'
+          required
+        />
       </motion.label>
 
-      <motion.div className='form__footer' variants={item}>
+      <motion.label className='input-label' variants={item}>
+        Message
         <input
-          type='submit'
-          className='btn btn--primary form__btn'
-          value='Send'
+          type='text'
+          name='message'
+          className='input-element'
+          placeholder='I have a project in mind...'
+          required
         />
+      </motion.label>
 
-        <div className='contact__content-icons'>
-          <a href='mailto:dimikalapocev@gmail.com' target='_blank'>
-            <img src={iconMail} alt='Mail icon' />
-          </a>
-          <a
-            href='https://www.linkedin.com/in/dimitar-kalapocev/'
-            target='_blank'>
-            <img src={iconLinkedin} alt='LinkedIn icon' />
-          </a>
-          <a
-            href='https://www.instagram.com/dimitar_kalapocev/'
-            target='_blank'>
-            <img src={iconInstagram} alt='Instagram icon' />
-          </a>
-          <a href='https://github.com/DimitarK13' target='_blank'>
-            <img src={iconGithub} alt='GitHub icon' />
-          </a>
-        </div>
-      </motion.div>
+      <input
+        type='submit'
+        className='btn btn--primary form__btn'
+        value='Send'
+      />
     </motion.form>
   );
 }
