@@ -1,7 +1,14 @@
 import portrait from '../assets/dimitar-kalapocev.jpg';
+import sliderImage1 from '../assets/projects/project-neotek-1.png';
+import sliderImage2 from '../assets/projects/project-youthcall-1.png';
+import sliderImage3 from '../assets/projects/project-forkify-1.png';
+import sliderImage4 from '../assets/projects/project-dkseticom-1.png';
 import Card from '../components/Card';
 import OtherProject from '../components/OtherProject';
 import { motion } from 'framer-motion';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import { Link } from 'react-router-dom';
 
 export default function About() {
   const container = {
@@ -65,6 +72,70 @@ export default function About() {
             variants={item}
           />
         </motion.section>
+
+        <section className='projects-showcase'>
+          <header className='projects-showcase__header'>
+            <h2 className='projects-showcase__title'>Projects</h2>
+            <p className='projects-showcase__text'>
+              Apart from coding, I find joy in delving into psychology books,
+              strategizing in chess, and cheering for Barcelona football club. I
+              also cherish participating in Erasmus+ projects, fostering
+              collaboration and cultural exchange.
+            </p>
+            <Link to={`/work/`} className='btn btn--primary'>
+              View All
+            </Link>
+          </header>
+          <Carousel
+            additionalTransfrom={0}
+            autoPlay
+            autoPlaySpeed={3500}
+            arrows={false}
+            centerMode
+            className='projects-showcase__carousel'
+            containerClass='container'
+            dotListClass=''
+            focusOnSelect={false}
+            infinite
+            itemClass=''
+            keyBoardControl
+            minimumTouchDrag={80}
+            pauseOnHover
+            draggable={false}
+            renderArrowsWhenDisabled={false}
+            renderButtonGroupOutside={false}
+            renderDotsOutside={false}
+            responsive={{
+              desktop: {
+                breakpoint: {
+                  max: 3000,
+                  min: 1024,
+                },
+                items: 1,
+                partialVisibilityGutter: 180,
+              },
+              mobile: {
+                breakpoint: {
+                  max: 1024,
+                  min: 0,
+                },
+                items: 1,
+              },
+            }}
+            rewind={false}
+            rewindWithAnimation={false}
+            rtl={false}
+            shouldResetAutoplay
+            showDots={false}
+            sliderClass=''
+            slidesToSlide={1}
+            swipeable={false}>
+            <img src={sliderImage1} />
+            <img src={sliderImage2} />
+            <img src={sliderImage3} />
+            <img src={sliderImage4} />
+          </Carousel>
+        </section>
 
         <section className='career-path'>
           <Card

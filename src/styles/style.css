@@ -959,3 +959,47 @@ h4 {
     display: none;
   }
 }
+
+.react-multi-carousel-item {
+  padding-inline: 12px;
+  filter: blur(4px) brightness(40%);
+  transform: scaleY(0.9);
+
+  transition: transform 175ms ease-in-out, filter 175ms ease-in-out;
+}
+
+.react-multi-carousel-item img {
+  border-radius: var(--border-radius-400);
+}
+
+.react-multi-carousel-item--active {
+  filter: none;
+  transform: scaleY(1);
+}
+
+.projects-showcase {
+  margin-bottom: 120px;
+}
+
+.projects-showcase__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.projects-showcase__text {
+  max-width: 780px;
+}
+
+@media (min-width: 768px) {
+  .projects-showcase__header {
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  .projects-showcase__text {
+    text-align: center;
+  }
+}
