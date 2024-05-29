@@ -76,12 +76,6 @@ export default function About() {
         <section className='projects-showcase'>
           <header className='projects-showcase__header'>
             <h2 className='projects-showcase__title'>Projects</h2>
-            <p className='projects-showcase__text'>
-              Apart from coding, I find joy in delving into psychology books,
-              strategizing in chess, and cheering for Barcelona football club. I
-              also cherish participating in Erasmus+ projects, fostering
-              collaboration and cultural exchange.
-            </p>
             <Link to={`/work/`} className='btn btn--primary'>
               View All
             </Link>
