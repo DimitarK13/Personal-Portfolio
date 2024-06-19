@@ -18,7 +18,7 @@ export default function Contact() {
 
   const getData = async () => {
     const response = await fetch(
-      'https://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric&appid=dfc884ab11e96f832d54aa9a6136c037'
+      'https://api.openweathermap.org/data/2.5/weather?q=Strumica&units=metric&appid=dfc884ab11e96f832d54aa9a6136c037'
     );
     const data = await response.json();
 
