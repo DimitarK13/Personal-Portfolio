@@ -2,7 +2,6 @@ import portrait from '../assets/dimitar-kalapocev.jpg';
 import Card from '../components/Card';
 import OtherProject from '../components/OtherProject';
 import { motion } from 'framer-motion';
-import 'react-multi-carousel/lib/styles.css';
 
 export default function About() {
   const container = {
