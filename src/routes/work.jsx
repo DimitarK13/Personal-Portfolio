@@ -7,6 +7,23 @@ export default function Work() {
 
   const projects = [
     {
+      id: 'youthcall',
+      heading: 'YouthCall',
+      link: 'https://youthcall.mk',
+      description: `YouthCall aims to assist young individuals in discovering suitable projects, courses, activities, or volunteering opportunities. For this project, I had to engineer a platform using NodeJS with ExpressJS for the backend, React for the frontend, ensuring fast and easy-to-use user experience, and MongoDB as database.`,
+      year: '2023',
+      language: 'Macedonian',
+      jobRole: 'Web Developer / UX/UI Designer',
+      technologies: ['React', 'NodeJS', 'ExpressJS', 'MongoDB', 'Figma'],
+      images: [
+        '/assets/projects/project-youthcall-1.png',
+        '/assets/projects/project-youthcall-2.png',
+        '/assets/projects/project-youthcall-3.png',
+        '/assets/projects/project-youthcall-4.png',
+        '/assets/projects/project-youthcall-5.png',
+      ],
+    },
+    {
       id: 'neotek-systems',
       heading: 'Neotek Systems',
       link: 'https://neotek.mk',
@@ -37,23 +54,7 @@ export default function Work() {
         '/assets/projects/project-dkseticom-4.png',
       ],
     },
-    {
-      id: 'youthcall',
-      heading: 'YouthCall',
-      link: 'https://youthcall.mk',
-      description: `YouthCall aims to assist young individuals in discovering suitable projects, courses, activities, or volunteering opportunities. The initiative involved creating a platform and hosting two workshops that actively engaged young participants in designing and testing the platform. (Below is displayed the new, improved design)`,
-      year: '2023',
-      language: 'Macedonian',
-      jobRole: 'Web Developer / UX/UI Designer',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'NodeJS', 'MongoDB', 'Figma'],
-      images: [
-        '/assets/projects/project-youthcall-1.png',
-        '/assets/projects/project-youthcall-2.png',
-        '/assets/projects/project-youthcall-3.png',
-        '/assets/projects/project-youthcall-4.png',
-        '/assets/projects/project-youthcall-5.png',
-      ],
-    },
+
     {
       id: 'personal-portfolio',
       heading: 'Personal Portfolio',
@@ -143,40 +144,44 @@ export default function Work() {
 
   return (
     <div data-scroll-section>
-      <div className='container container__padding-block'>
+      <div className="container container__padding-block">
         <motion.h1
-          className='projects-heading'
+          className="projects-heading"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
             duration: 1,
             ease: 'anticipate',
-          }}>
+          }}
+        >
           Explore the fine selection of projects
         </motion.h1>
 
-        <div className='project-container'>
+        <div className="project-container">
           <motion.ul
-            className='projects'
+            className="projects"
             variants={container}
-            initial='hidden'
-            animate='visible'>
+            initial="hidden"
+            animate="visible"
+          >
             {projects.map((project) => (
               <motion.li
                 key={project.id}
                 variants={item}
-                className='h2 projects__heading'>
+                className="h2 projects__heading"
+              >
                 <Link
                   to={`/work/${project.id}`}
                   state={{ projectData: project }}
-                  onMouseOver={() => setImage(project.images[0])}>
+                  onMouseOver={() => setImage(project.images[0])}
+                >
                   {project.heading}
                 </Link>
               </motion.li>
             ))}
 
             <motion.img
-              className='projects__image-showcase'
+              className="projects__image-showcase"
               variants={item}
               src={image}
             />
