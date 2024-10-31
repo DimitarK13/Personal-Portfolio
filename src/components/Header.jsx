@@ -8,7 +8,7 @@ export default function Header() {
   const [navIcon, setNavIcon] = useState(iconMenu);
   const [isStatusOpen, setIsStatusOpen] = useState(false);
 
-  const message = 'available';
+  const message = 'busy';
   const availabilityStatuses = {
     available: {
       status: 'Available',
@@ -36,61 +36,65 @@ export default function Header() {
   };
 
   return (
-    <nav className='nav'>
-      <div className='container nav__container'>
+    <nav className="nav">
+      <div className="container nav__container">
         <button
-          className='nav__toggle'
-          aria-controls='primary-nav'
+          className="nav__toggle"
+          aria-controls="primary-nav"
           aria-expanded={isNavOpen}
-          onClick={toggleNav}>
-          <img src={navIcon} alt='Menu toggle open' />
+          onClick={toggleNav}
+        >
+          <img src={navIcon} alt="Menu toggle open" />
         </button>
 
-        <ul className='nav__list' id='primary-nav' aria-expanded={isNavOpen}>
-          <li className='nav__list-item'>
+        <ul className="nav__list" id="primary-nav" aria-expanded={isNavOpen}>
+          <li className="nav__list-item">
             <Link to={`/`} onClick={toggleNav}>
               01. Home
             </Link>
           </li>
-          <li className='nav__list-item'>
+          <li className="nav__list-item">
             <Link to={`about`} onClick={toggleNav}>
               02. About
             </Link>
           </li>
-          <li className='nav__list-item'>
+          <li className="nav__list-item">
             <Link to={`work`} onClick={toggleNav}>
               03. Work
             </Link>
           </li>
-          <li className='nav__list-item'>
+          <li className="nav__list-item">
             <Link to={`contact`} onClick={toggleNav}>
               04. Contact
             </Link>
           </li>
         </ul>
 
-        <div className='nav__availability-status'>
+        <div className="nav__availability-status">
           <div
-            className='nav__availability-status--toggle'
-            aria-controls='availability-status-message'
+            className="nav__availability-status--toggle"
+            aria-controls="availability-status-message"
             aria-expanded={isStatusOpen}
-            onClick={toggleStatus}>
-            <p className='body-s'>Current Status:</p>
+            onClick={toggleStatus}
+          >
+            <p className="body-s">Current Status:</p>
             <p
               className={
                 'body-m color--' +
                 availabilityStatuses[message].status.toLowerCase() +
                 ' font-weight--medium'
-              }>
+              }
+            >
               {availabilityStatuses[message].status}
             </p>
           </div>
 
           <div
-            className='nav__availability-status--message'
-            id='availability-status-message'
-            aria-expanded={isStatusOpen}>
-            <p className='nav__availability-status__title'>
+            className="nav__availability-status--message"
+            id="availability-status-message"
+            aria-expanded={isStatusOpen}
+          >
+            <p className="nav__availability-status__title">
               Project Availability Status
             </p>
 
@@ -98,7 +102,8 @@ export default function Header() {
               className={
                 'body-s color--' +
                 availabilityStatuses[message].status.toLowerCase()
-              }>
+              }
+            >
               {availabilityStatuses[message].message}
             </p>
           </div>
